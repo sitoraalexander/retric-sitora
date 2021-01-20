@@ -149,7 +149,7 @@ const SignIn = ({ setUserState, user }) => {
                     onClick={handleFormSubmit}
                     size='lg'
                   >
-                    Get Started
+                    Login
                   </Button>
                 </CardFooter>
                 <div className='pull-left ml-3 mb-3'>

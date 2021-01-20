@@ -217,12 +217,21 @@ const Register = ({ authenticate, user }) => {
                     >
                       Get Started
                     </Button>
+                    <Button
+                      className='btn-round'
+                      color='primary'
+                      type='button'
+                      size='lg'
+                      onClick={handleFormSubmit}
+                    >
+                      Login
+                    </Button>
                   </CardFooter>
                 </Card>
               </Col>
             </Row>
           </Container>
-          <div className='register-bg' />
+          {/* <div className='register-bg' /> */}
           <div
             className='square square-1'
             id='square1'
