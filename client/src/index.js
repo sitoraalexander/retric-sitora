@@ -1,0 +1,10 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'assets/css/blk-design-system-pro-react.min.css';
+import 'assets/css/nucleo-icons.css';
+import 'assets/demo/demo.css';
+import 'assets/demo/react-demo.css';
+ReactDOM.render(<App />, document.getElementById('root'));
