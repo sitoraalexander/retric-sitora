@@ -1,19 +1,3 @@
-/*!
-
-=========================================================
-* BLK Design System PRO React - v1.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/blk-design-system-pro-react
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -36,7 +20,7 @@ const DemoFooter = () => {
         <Container>
           <Row>
             <Col md='3'>
-              <h1 className='title'>BLK• React</h1>
+              <h1 className='title'>Retric 2021 ©</h1>
             </Col>
             <Col md='3' xs='6'>
               <Nav>
@@ -104,7 +88,7 @@ const DemoFooter = () => {
                 <Button
                   className='btn-icon btn-neutral btn-round btn-simple'
                   color='default'
-                  href='https://twitter.com/creativetim'
+                  // href=''
                   id='tooltip39661217'
                   target='_blank'
                 >
@@ -116,7 +100,7 @@ const DemoFooter = () => {
                 <Button
                   className='btn-icon btn-neutral btn-round btn-simple ml-1'
                   color='default'
-                  href='https://www.facebook.com/creativetim'
+                  // href=''
                   id='tooltip206037619'
                   target='_blank'
                 >
@@ -128,11 +112,11 @@ const DemoFooter = () => {
                 <Button
                   className='btn-icon btn-neutral btn-round btn-simple ml-1'
                   color='default'
-                  href='https://dribbble.com/creativetim'
+                  // href=''
                   id='tooltip750293512'
                   target='_blank'
                 >
-                  <i className='fab fa-dribbble' />
+                  <i className='fab fa-instagram' />
                 </Button>
                 <UncontrolledTooltip delay={0} target='tooltip750293512'>
                   Follow us

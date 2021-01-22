@@ -21,7 +21,7 @@ import {
 import "../../style.css"
 
 
-const ColorNavbar = () => {
+const NavbarMain = () => {
   const history = useHistory();
   const [navbarColor, setNavbarColor] = useState('navbar-transparent');
   useEffect(() => {
@@ -107,4 +107,4 @@ const ColorNavbar = () => {
   );
 };
 
-export default ColorNavbar;
+export default NavbarMain;
