@@ -30,6 +30,15 @@ app.use(passport.session());
 app.use(routes);
 
 // Connect to the Mongo DB
+
+mongoose.connect(
+	process.env.MONGODB_URI || "mongodb://localhost/retric",
+	{
+	  useCreateIndex: true,
+	  useNewUrlParser: true,
+	  useUnifiedTopology: true 
+	}
+  );
 mongoose.connect(
   process.env.ATLAS_URL ||
     'mongodb+srv://retric-app:sBxKeGE4JccEykjy@cluster0.u7qqt.mongodb.net/retric?retryWrites=true&w=majority',

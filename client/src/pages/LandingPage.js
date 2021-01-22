@@ -73,17 +73,15 @@ const LandingPage = () => {
             <Row className='row-grid justify-content-between align-items-center text-left'>
               <Col lg='6' md='6'>
                 <h1 className='text-white'>
-                  We keep your coin <br />
-                  <span className='text-white'>secured</span>
+                  Services Made Easy<br />
+                  <span className='text-white'>Simple Bartering</span>
                 </h1>
                 <p className='text-white mb-3'>
-                  A wonderful serenity has taken possession of my entire soul,
-                  like these sweet mornings of spring which I enjoy with my
-                  whole heart. I am alone, and feel...
+                  A new and approved way to exchange services without a penny being spent! Here you can exchange work, recipes, professions and whatever else you need. Please enjoy and remember to BARTER!
                 </p>
                 <div className='btn-wrapper mb-3'>
                   <p className='category text-success d-inline'>
-                    From 9.99%/mo
+                    
                   </p>
                   <Button
                     className='btn-link'

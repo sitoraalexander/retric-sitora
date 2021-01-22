@@ -229,36 +229,52 @@ function Comments({ username }) {
             >
               <i className='tim-icons icon-send' /> Submit Request
             </Button>
+            
           </form>
+          
         </Col>
       </Row>
+      <Container>
+      <form> 
+						<Input value={formObject.search} onChange={handleInputChange} name='search' id='search' placeholder='Enter your title search here' />
+						<FormBtn
+							onClick={handleFormSubmit}>
+							Search
+						</FormBtn>
+					</form>
+      </Container>
       ,
       <Row>
         <Col size='md-12'>
-          {/* {comments.length ? (
+        {comments.length ? (
 					<Table>
+						<Tr>
+							<Th>Member</Th>
+							<Th>Title</Th>
+							<Th>Detail</Th>
+							<Th>Offer</Th>
+							<Th>Date</Th>
+						</Tr>
 						{comments.map(comment => (
 							<Tr key={comment._id}>
+								<Td><strong>{comment.username}</strong> 
+								</Td>
 								<Td>
 									<Link
 										to={"/comments/" + comment._id}
 										style={{ textAlign: "left", display: "block" }}>
-										<strong>{comment.username}:</strong> {comment.body}
+										<span>{comment.title}</span>
 									</Link>
 								</Td>
-								<Td>{comment.date}</Td>
-								<Td>
-									<DeleteBtn onClick={() => deleteComment(comment._id)} />
-								</Td>
+								<Td>{comment.detail}</Td>
+								<Td>{comment.offer}</Td>
+								<Td>{UtilDate.formatDate(comment.date)}</Td>
 							</Tr>
 						))}
 					</Table>
 				) : (
 					<h3>No Results to Display</h3>
-				)} */}
-          {comments.map((comment) => {
-            return <CommentSection comment={comment} />;
-          })}
+				)}
         </Col>
       </Row>
       ,

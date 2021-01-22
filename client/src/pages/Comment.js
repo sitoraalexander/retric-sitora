@@ -15,24 +15,39 @@ function Comment() {
       .then(res => setComment(res.data))
       .catch(err => console.log(err));
   }, [match.params.id])
+  function handleFormSubmit(event) {
+    event.preventDefault();		
+  }
+	
 
   return (
-      <Container fluid>
-        <Row>
-          <Col size="md-10 md-offset-1">
-            <article>
-               <Card heading={comment.username}>
-                  {comment.body}
-               </Card>
-            </article>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-2">
-            <Link className="text-dark" to="/comments">← Back to all comments</Link>
-          </Col>
-        </Row>
-      </Container>
+    <Container fluid>
+    <Row>
+      <Col size="md-6 md-offset-1">
+        <article>
+           <Card heading={comment.username}>
+              <span><strong>Title:</strong> {comment.title}</span>
+              <br />
+              <span><strong>Detail:</strong> {comment.detail}</span>
+              <br />
+              <span><strong>Offer:</strong> {comment.offer}</span>
+              <br />
+              <span><strong>Date:</strong> {comment.date}</span>
+           </Card>
+           <FormBtn
+        // disabled={!(formObject.body && formObject.detail)}
+        onClick={handleFormSubmit}>
+        Accept the proposal
+      </FormBtn>
+        </article>
+      </Col>
+    </Row>
+    <Row>
+      <Col size="md-2">
+        <Link className="text-dark" to="/comments">← Back to all comments</Link>
+      </Col>
+    </Row>
+  </Container>
     );
   }
 
