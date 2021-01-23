@@ -182,7 +182,7 @@ function Comments({ username }) {
               <form>
                 <Col size='sm-12'>
                   <Input
-                    placeholder='Modify the reuquest...'
+                    placeholder='Modify the request...'
                     rows='4'
                     type='textarea'
                     onChange={(e) => setReply(e.target.value)}
