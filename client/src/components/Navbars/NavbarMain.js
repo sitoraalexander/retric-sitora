@@ -48,15 +48,13 @@ const NavbarMain = () => {
       <Navbar className={'fixed-top ' + navbarColor} expand='sm'>
         <Container>
           <div className='navbar-translate '>
-            <NavbarBrand to='/index' tag={Link} id='tooltip6619950104'className="col-md-4">
-              {/* <span>Retric</span> */}
+            <NavbarBrand to='/index' tag={Link} id='tooltip6619950104' className="col-md-4">
+
               <img
-                    
-                      alt='retric logo white'
-                      className="retric-white"
-                      
-                      src={require('../../assets/img/retric-logo-blue.png').default}
-                    />
+                alt='retric logo white'
+                className="retric-white"
+                src={require('../../assets/img/retric-logo-blue.png').default}
+              />
             </NavbarBrand>
             <button className='navbar-toggler' id='navigation'>
               <span className='navbar-toggler-bar bar1' />
@@ -67,15 +65,15 @@ const NavbarMain = () => {
           <UncontrolledCollapse navbar toggler='#navigation'>
             <div className='navbar-collapse-header'>
               <Row>
-                <Col className='collapse-brand' xs='6'>
+                <Col className='' md='6'>
                   {/* <a href='#pablo' onClick={(e) => e.preventDefault()}> */}
-                    {/* <span>Retric</span> */}
-                    <img
+                  {/* <span>Retric</span> */}
+                  <img
                     href='#pablo' onClick={(e) => e.preventDefault()}
-                      alt='...'
-                      className='path'
-                      src={require('../../assets/img/retric-logo-white.png').default}
-                    />
+                    alt='...'
+                    className='path'
+                    src={require('../../assets/img/retric-logo-white.png').default}
+                  />
                   {/* </a> */}
                 </Col>
                 <Col className='collapse-close text-right' xs='6'>
@@ -88,15 +86,12 @@ const NavbarMain = () => {
             <Nav className='ml-auto' navbar>
               <NavItem>
                 <Button
-                  className='nav-link'
-                  color='primary'
-                  size='sm'
-                  // target='_blank'
-                  onClick={() => {
-                    history.push('login');
-                  }}
+                  className='pull-right logout-btn'
+                  color='neutral'
+                  type='button'
+                  onClick={() => history.push('/')}
                 >
-                  <p>Login</p>
+                  <i className='tim-icons icon-button-power ml-auto' /> Logout
                 </Button>
               </NavItem>
             </Nav>

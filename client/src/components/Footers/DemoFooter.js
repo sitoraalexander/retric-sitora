@@ -29,11 +29,11 @@ const DemoFooter = () => {
                     Home
                   </NavLink>
                 </NavItem>
-                <NavItem>
+                {/* <NavItem>
                   <NavLink to='/landing-page' tag={Link}>
                     Landing
                   </NavLink>
-                </NavItem>
+                </NavItem> */}
                 <NavItem>
                   <NavLink to='/register-page' tag={Link}>
                     Register

@@ -2,12 +2,17 @@ import React, { useState, useEffect, useRef, Fragment } from 'react';
 import DeleteBtn from '../components/DeleteBtn';
 import API from '../utils/API';
 import { Link } from 'react-router-dom';
-import { Col, Container, Row } from '../components/Grid';
+// import { Col, Container, Row } from '../components/Grid';
 import { Table, Tr, Td } from '../components/Table';
 import { ForwardRefInput, FormBtn } from '../components/Form';
+import NavbarMain from "../components/Navbars/NavbarMain";
 
-import { Input, Button, Media, UncontrolledTooltip } from 'reactstrap';
+import { Input, Button, Media, UncontrolledTooltip, Row, Col, Container } from 'reactstrap';
 import { useHistory } from 'react-router-dom';
+import DemoFooter from 'components/Footers/DemoFooter';
+
+
+
 function Comments({ username }) {
   console.log('USERNAME=');
   let history = useHistory();
@@ -17,6 +22,17 @@ function Comments({ username }) {
   const [formObject, setFormObject] = useState({
     body: '',
   });
+
+  const wrapper = useRef(null);
+  useEffect(() => {
+    document.documentElement.scrollTop = 0;
+    document.scrollingElement.scrollTop = 0;
+    // wrapper.current.scrollTop = 0;
+    document.body.classList.add('landing-page');
+    return function cleanup() {
+      document.body.classList.remove('landing-page');
+    };
+  }, []);
 
   console.log(comments);
 
@@ -117,31 +133,31 @@ function Comments({ username }) {
                   </Button>
                 </Fragment>
               ) : (
-                comment.username !== username && (
-                  <Fragment>
-                    <Button
-                      className='btn-simple pull-right'
-                      color='primary'
-                      href='#pablo'
-                      id='tooltip442113005'
-                      onClick={ApproveRequest}
-                      size='sm'
-                    >
-                      <i className='tim-icons icon-check-2' /> Approve
+                  comment.username !== username && (
+                    <Fragment>
+                      <Button
+                        className='btn-simple pull-right'
+                        color='primary'
+                        href='#pablo'
+                        id='tooltip442113005'
+                        onClick={ApproveRequest}
+                        size='sm'
+                      >
+                        <i className='tim-icons icon-check-2' /> Approve
                     </Button>
 
-                    <Button
-                      className='btn-simple pull-right'
-                      color='danger'
-                      type='button'
-                      onClick={(e) => setModify(!Modify)}
-                      size='sm'
-                    >
-                      <i className='tim-icons icon-pencil' /> Modify and Approve
+                      <Button
+                        className='btn-simple pull-right'
+                        color='danger'
+                        type='button'
+                        onClick={(e) => setModify(!Modify)}
+                        size='sm'
+                      >
+                        <i className='tim-icons icon-pencil' /> Modify and Approve
                     </Button>
-                  </Fragment>
-                )
-              )}
+                    </Fragment>
+                  )
+                )}
             </div>
           }
           {comment.reply.body && (
@@ -187,55 +203,93 @@ function Comments({ username }) {
     );
   };
 
+
   return (
-    <Container>
-      <Row>
-        <Col size='md-12'>
+    <>
+      <NavbarMain />
+      <div className='wrapper' ref={wrapper}>
+        <div className='page-header'>
+          <img
+            alt='...'
+            className='path'
+            src={require('../assets/img/blob.png').default}
+          />
+          <img
+            alt='...'
+            className='path2'
+            src={require('../assets/img/path2.png').default}
+          />
+          <img
+            alt='...'
+            className='shapes triangle'
+            src={require('../assets/img/triunghiuri.png').default}
+          />
+          <img
+            alt='...'
+            className='shapes wave'
+            src={require('../assets/img/waves.png').default}
+          />
+          <img
+            alt='...'
+            className='shapes squares'
+            src={require('../assets/img/patrat.png').default}
+          />
+          <img
+            alt='...'
+            className='shapes circle'
+            src={require('../assets/img/cercuri.png').default}
+          />
           <Container>
+            <div>
+              <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            </div>
             <Row>
-              <Col size='lg-6'>
-                <div style={{ fontSize: '30px', color: 'white' }}>
-                  Welcome! <br /> {username}
+              <Col>
+
+                <Row>
+                  <Col size='lg-6'>
+                    <div style={{ fontSize: '30px', color: 'white' }}>
+                      Welcome {username}!
                 </div>
-              </Col>
-              <Col size='lg-6'>
-                <Button
+                  </Col>
+                  {/* <Col size='lg-6'> */}
+                  {/* <Button
                   className='pull-right'
                   color='neutral'
                   type='button'
                   onClick={() => history.push('/')}
                 >
                   <i className='tim-icons icon-button-power' /> Logout
-                </Button>
+                </Button> */}
+                  {/* </Col> */}
+                </Row>
+
+
+                <form className='mt-3'>
+                  <Col size='sm-12'>
+                    <Input
+                      placeholder='Enter your request here...'
+                      rows='4'
+                      type='textarea'
+                      name='body'
+                      onChange={handleInputChange}
+                    />
+                  </Col>
+                  <Button
+                    className='pull-left mt-2'
+                    color='primary'
+                    type='button'
+                    onClick={handleFormSubmit}
+                  >
+                    <i className='tim-icons icon-send' /> Submit Request
+            </Button>
+                </form>
               </Col>
             </Row>
-          </Container>
-
-          <form className='mt-3'>
-            <Col size='sm-12'>
-              <Input
-                placeholder='Write a nice reply or go home...'
-                rows='4'
-                type='textarea'
-                name='body'
-                onChange={handleInputChange}
-              />
-            </Col>
-            <Button
-              className='pull-left mt-2'
-              color='primary'
-              type='button'
-              onClick={handleFormSubmit}
-            >
-              <i className='tim-icons icon-send' /> Submit Request
-            </Button>
-          </form>
-        </Col>
-      </Row>
       ,
       <Row>
-        <Col size='md-12'>
-          {/* {comments.length ? (
+              <Col size='md-12'>
+                {/* {comments.length ? (
 					<Table>
 						{comments.map(comment => (
 							<Tr key={comment._id}>
@@ -256,14 +310,19 @@ function Comments({ username }) {
 				) : (
 					<h3>No Results to Display</h3>
 				)} */}
-          {comments.map((comment) => {
-            return <CommentSection comment={comment} />;
-          })}
-        </Col>
-      </Row>
+                {comments.map((comment) => {
+                  return <CommentSection comment={comment} />;
+                })}
+              </Col>
+            </Row>
       ,
     </Container>
+        </div>
+      </div>
+      <DemoFooter />
+    </>
   );
 }
+
 
 export default Comments;
